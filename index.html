@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Para Ti 💖</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<div class="container glass">
+
+    <!-- HOME -->
+    <div class="screen" id="home">
+        <h1>💖 Bienvenida</h1>
+
+        <button class="pulse" onclick="openScreen('valentine')">
+            ✨ Nuevo
+        </button>
+
+        <button onclick="openScreen('diary')">📖 Diario</button>
+        <button onclick="openScreen('memories')">💌 Recuerdos</button>
+        <button onclick="openScreen('settings')">⚙️ Ajustes</button>
+    </div>
+
+    <!-- SAN VALENTÍN -->
+    <div class="screen hidden" id="valentine">
+        <h2>💘 ¿Quieres ser mi San Valentín este 14?</h2>
+
+        <button onclick="acceptValentine()">Sí 💖</button>
+        <button onclick="rejectValentine()">No 💔</button>
+    </div>
+
+    <!-- DIARIO -->
+    <div class="screen hidden" id="diary">
+        <h2>📖 Diario</h2>
+
+        <textarea id="diaryText" placeholder="Escribe lo que sientes..."></textarea>
+        <p id="status" class="status"></p>
+
+        <button onclick="openScreen('home')">← Volver</button>
+    </div>
+
+    <!-- RECUERDOS -->
+    <div class="screen hidden" id="memories">
+        <h2>💌 Recuerdos</h2>
+
+        <div class="card">💖 Nuestro primer mensaje</div>
+        <div class="card">✨ Ese día especial</div>
+
+        <button onclick="openScreen('home')">← Volver</button>
+    </div>
+
+    <!-- AJUSTES -->
+    <div class="screen hidden" id="settings">
+        <h2>⚙️ Ajustes</h2>
+
+        <label>Color principal</label>
+        <input type="color" id="themeColor">
+
+        <button onclick="saveTheme()">Guardar</button>
+        <button onclick="openScreen('home')">← Volver</button>
+    </div>
+
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>

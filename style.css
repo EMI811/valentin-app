@@ -1,0 +1,114 @@
+:root {
+    --accent-color: #1c1c1e; /* negro Apple */
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --text-color: #1c1c1e;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(180deg, #f2f2f7, #e5e5ea);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+    color: var(--text-color);
+}
+
+/* CONTENEDOR PRINCIPAL */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    border-radius: 28px;
+    padding: 32px;
+    width: 330px;
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* PANTALLAS */
+.screen {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* TÍTULOS */
+h1, h2 {
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+
+/* BOTONES */
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 14px;
+    border: none;
+    border-radius: 16px;
+    background: var(--accent-color);
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* BOTÓN NUEVO – SUTIL */
+.pulse {
+    animation: pulseSoft 2.2s infinite;
+}
+
+@keyframes pulseSoft {
+    0% { box-shadow: 0 0 0 0 rgba(0,0,0,0.15); }
+    70% { box-shadow: 0 0 0 10px rgba(0,0,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
+}
+
+/* TEXTAREA */
+textarea {
+    width: 100%;
+    height: 120px;
+    border-radius: 18px;
+    border: 1px solid #d1d1d6;
+    padding: 12px;
+    font-size: 15px;
+    resize: none;
+    outline: none;
+    background: white;
+}
+
+/* STATUS */
+.status {
+    font-size: 12px;
+    margin-top: 6px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #8e8e93;
+}
+
+.status.show {
+    opacity: 1;
+}
+
+/* TARJETAS DE RECUERDOS */
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 16px;
+    margin: 10px 0;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
